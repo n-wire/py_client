@@ -13,7 +13,7 @@ A NodeWire program can connect to other nodes to monitor and send messagesto it.
 Hello NodeWire
 ===============
 
-.. code-block::python
+   .. code-block:: python
 
     import asyncio
     from nodewire import Node
@@ -51,23 +51,23 @@ This function is meant to serve as the mainloop of your nodewire application but
 Control and Monitor
 ===================
 
-.. code-block::python
+    .. code-block:: python
 
-    from nodewire import Node
+        from nodewire import Node
 
-    class MyNode(Node):
-        def got_count(self, nodename):
-            print(counter.count)
-            if counter.count == 10:
-                counter.reset = 0
+        class MyNode(Node):
+            def got_count(self, nodename):
+                print(counter.count)
+                if counter.count == 10:
+                    counter.reset = 0
 
-        async def loop(self):
-            global counter
-            print('connected')
-            counter = await self.get_node('hello')
-            counter.start = 1
-            counter.on_count = self.got_count
+            async def loop(self):
+                global counter
+                print('connected')
+                counter = await self.get_node('hello')
+                counter.start = 1
+                counter.on_count = self.got_count
 
-    mynode = MyNode(nodename='control', server='localhost')
-    mynode.nw.run()
+        mynode = MyNode(nodename='control', server='localhost')
+        mynode.nw.run()
 
