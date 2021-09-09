@@ -8,7 +8,7 @@ class Client():
         self.received = None
         self.managed = True
 
-    async def connect(self, serverHost='secure.nodewire.org', failed=None):
+    async def connect(self, serverHost='s2.nodewire.org', failed=None):
         while True:
             try:
                 print('connecting to {} ...'.format(serverHost))

@@ -179,9 +179,9 @@ class Nodewire:
         try:
             server = self.server_address
             if server == 'localhost': server+=':5001'
-            print('http://'+server+'/login')
-            token = requests.post('http://'+server+'/login', json={'email': email, 'pwd': pwd})
-            result = requests.post('http://'+server+'/add_gateway', json={'gateway': self.uuid}, headers={"Authorization": f"Bearer {token.text}"})
+            print('https://'+server+'/login')
+            token = requests.post('https://'+server+'/login', json={'email': email, 'pwd': pwd})
+            result = requests.post('https://'+server+'/add_gateway', json={'gateway': self.uuid}, headers={"Authorization": f"Bearer {token.text}"})
             print(result.text)
             if result.text == 'success':
                 asyncio.Task(self.disconnected())

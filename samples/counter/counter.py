@@ -18,6 +18,6 @@ class MyNode(Node):
             if self.start==1: 
                 self.count = self.count + 1
 
-mynode = MyNode(inputs='start reset', outputs='count status',  server='localhost')
+mynode = MyNode(inputs='start reset', outputs='count status')
 mynode.nw.debug = True
 mynode.nw.run()
